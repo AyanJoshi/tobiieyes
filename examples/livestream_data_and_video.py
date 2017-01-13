@@ -20,7 +20,8 @@ running = True
 
 
 # GLASSES_IP = "fd93:27e0:59ca:16:76fe:48ff:fe05:1d43" # IPv6 address scope global
-GLASSES_IP = "10.46.16.86"  # IPv4 address
+#GLASSES_IP = "10.46.16.86"  # IPv4 address
+GLASSES_IP = "10.218.109.16"  # IPv4 address
 PORT = 49152
 
 
@@ -95,7 +96,17 @@ if __name__ == "__main__":
     while running:
         # Read live data
         data, address = data_socket.recvfrom(1024)
-        print (data)
+
+	#print(data.split())
+        #print (data)
+        #print (data.split(','))
+
+	d_spl = data.split(',', 2)
+	iden = d_spl[2].split(':')
+	if(iden[0] == '"gp"'):
+		print(iden)
+		# Here we display to the screen the pupil position
+		
 
         state_change_return, state, pending_state = pipeline.get_state(0)
 
