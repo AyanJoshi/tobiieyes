@@ -15,9 +15,16 @@ import pygst
 pygst.require('0.10')
 import gst
 
+# For Drawing 
+import pygame
+
 timeout = 1.0
 running = True
 
+
+# Output Screen Res
+SCREEN_RES_X = 1000
+SCREEN_RES_Y = 1000
 
 # GLASSES_IP = "fd93:27e0:59ca:16:76fe:48ff:fe05:1d43" # IPv6 address scope global
 #GLASSES_IP = "10.46.16.86"  # IPv4 address
@@ -91,7 +98,18 @@ if __name__ == "__main__":
     src = pipeline.get_by_name("src")
     src.set_property("sockfd", video_socket.fileno())
 
-    pipeline.set_state(gst.STATE_PLAYING)
+    #pipeline.set_state(gst.STATE_PLAYING)
+
+    # For drawing on screen
+    red = (255,0,0)
+    green = (0,255,0)
+    blue = (0,0,255)
+    darkBlue = (0,0,128)
+    white = (255,255,255)
+    black = (0,0,0)
+    pink = (255,200,200)
+    screen = pygame.display.set_mode((SCREEN_RES_X,SCREEN_RES_Y))
+    screen.fill(white)
 
     while running:
         # Read live data
@@ -104,8 +122,15 @@ if __name__ == "__main__":
 	d_spl = data.split(',', 2)
 	iden = d_spl[2].split(':')
 	if(iden[0] == '"gp"'):
-		print(iden)
-		# Here we display to the screen the pupil position
+		g_coords = (iden[1].split(',', 2))
+		print(g_coords[0] + ', ' + g_coords[1])
+		x_flt = float((g_coords[0])[1:])
+		y_flt = float((g_coords[1])[:-1])
+		if((x_flt+y_flt) > 0.001):
+			# Here we display to the screen the pupil position
+			screen.fill(white)
+			pygame.draw.circle(screen, green, (int(SCREEN_RES_X*x_flt), int(SCREEN_RES_Y*y_flt)), 10, 3)
+			pygame.display.update()
 		
 
         state_change_return, state, pending_state = pipeline.get_state(0)
