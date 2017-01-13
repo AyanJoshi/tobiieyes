@@ -26,6 +26,9 @@ running = True
 SCREEN_RES_X = 1000
 SCREEN_RES_Y = 1000
 
+# Smoothing Factor
+SF = 10
+
 # GLASSES_IP = "fd93:27e0:59ca:16:76fe:48ff:fe05:1d43" # IPv6 address scope global
 #GLASSES_IP = "10.46.16.86"  # IPv4 address
 GLASSES_IP = "10.218.109.16"  # IPv4 address
@@ -71,6 +74,11 @@ def stop_sending_msg():
     global running
     running = False
 
+def avg(coord_list):
+	summer = 0
+	for c in coord_list:
+		summer = summer + c
+	return summer/len(coord_list)
 
 if __name__ == "__main__":
     signal.signal(signal.SIGINT, signal_handler)
@@ -111,6 +119,9 @@ if __name__ == "__main__":
     screen = pygame.display.set_mode((SCREEN_RES_X,SCREEN_RES_Y))
     screen.fill(white)
 
+    x_smooth = []
+    y_smooth = []
+
     while running:
         # Read live data
         data, address = data_socket.recvfrom(1024)
@@ -124,12 +135,19 @@ if __name__ == "__main__":
 	if(iden[0] == '"gp"'):
 		g_coords = (iden[1].split(',', 2))
 		print(g_coords[0] + ', ' + g_coords[1])
-		x_flt = float((g_coords[0])[1:])
-		y_flt = float((g_coords[1])[:-1])
-		if((x_flt+y_flt) > 0.001):
+		cur_x = float((g_coords[0])[1:])
+		cur_y = float((g_coords[1])[:-1])
+		if((cur_x+cur_y) > 0.001):
 			# Here we display to the screen the pupil position
+			x_smooth.insert(0, cur_x)
+			y_smooth.insert(0, cur_y)
+			if(len(x_smooth) > SF):
+				x_smooth.pop()
+			if(len(y_smooth) > SF):
+				y_smooth.pop()
 			screen.fill(white)
-			pygame.draw.circle(screen, green, (int(SCREEN_RES_X*x_flt), int(SCREEN_RES_Y*y_flt)), 10, 3)
+			pygame.draw.circle(screen, green, (int(SCREEN_RES_X*avg(x_smooth)), int(SCREEN_RES_Y*avg(y_smooth))), 10, 3)
+			#pygame.draw.circle(screen, green, (int(SCREEN_RES_X*cur_x), int(SCREEN_RES_Y*cur_y)), 10, 3)
 			pygame.display.update()
 		
 
