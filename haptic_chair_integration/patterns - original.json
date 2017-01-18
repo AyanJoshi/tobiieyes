@@ -1,0 +1,290 @@
+{
+	"durations": [
+		{ "pulse": 250, "gap": 50 },
+		{ "pulse": 500, "gap": 50 },
+		{ "pulse": 750, "gap": 50 },
+		{ "pulse": 1000, "gap": 50 }
+	],
+
+	"patterns": [
+		{
+			"name": "Lips - Stretch",
+			"image": "lip-stretch.png",
+			"vibrations": [
+				{
+					"beat": 0,
+					"motors": [24, 32, 31, 39]
+				},
+				{
+					"beat": 1,
+					"motors": [24, 32, 31, 39]
+				},
+				{
+					"beat": 2,
+					"motors": [24, 32, 31, 39]
+				}
+			]
+		},
+		{
+			"name": "Lips - Smile",
+			"image": "smile.png",
+			"vibrations": [
+				{
+					"beat": 0,
+					"motors": [43, 44]
+				},
+				{
+					"beat": 1,
+					"motors": [34, 37]
+				},
+				{
+					"beat": 2,
+					"motors": [25, 30]
+				},
+				{
+					"beat": 3,
+					"motors": [16, 23]
+				}
+			]
+		},
+		{
+			"name": "Lips - Frown",
+			"image": "frown.png",
+			"vibrations": [
+				{
+					"beat": 0,
+					"motors": [19, 20]
+				},
+				{
+					"beat": 1,
+					"motors": [26, 29]
+				},
+				{
+					"beat": 2,
+					"motors": [33, 38]
+				},
+				{
+					"beat": 3,
+					"motors": [40, 47]
+				}
+			]
+		},
+		{
+			"name": "Lips - Open",
+			"image": "mouth-open.png",
+			"vibrations": [
+				{
+					"beat": 0,
+					"motors": [35, 36]
+				},
+				{
+					"beat": 1,
+					"motors": [26, 29, 42, 45]
+				},
+				{
+					"beat": 2,
+					"motors": [25, 30, 41, 46]
+				}
+			]
+		},
+		{
+			"name": "Lips - Close",
+			"image": "mouth-close.png",
+			"vibrations": [
+				{
+					"beat": 2,
+					"motors": [35, 36]
+				},
+				{
+					"beat": 1,
+					"motors": [26, 29, 42, 45]
+				},
+				{
+					"beat": 0,
+					"motors": [25, 30, 41, 46]
+				}
+			]
+		},
+		{
+			"name": "Nose Scrunch",
+			"image": "nose-scrunch.png",
+			"vibrations": [
+				{
+					"beat": 0,
+					"motors": [11, 12]
+				},
+				{
+					"beat": 1,
+					"motors": [11, 12]
+				},
+				{
+					"beat": 2,
+					"motors": [19, 20, 18, 21]
+				}
+			]
+		},
+		{
+			"name": "Jaw Drop",
+			"image": "jaw-drop.png",
+			"saltation": true,
+			"vibrations": [
+				{
+					"beat": 0,
+					"motors": [26, 27, 28, 29]
+				},
+				{
+					"beat": 1,
+					"motors": [34, 35, 36, 37]
+				},
+				{
+					"beat": 2,
+					"motors": [42, 43, 44, 45]
+				}
+			]
+		},
+		{
+			"name": "Cheek Stretch",
+			"image": "cheek-puff.png",
+			"vibrations": [
+				{
+					"beat": 0,
+					"motors": [16, 17, 22, 23, 8, 9, 14, 15]
+				},
+				{
+					"beat": 1,
+					"motors": [18, 21, 10, 13]
+				},
+				{
+					"beat": 2,
+					"motors": [16, 17, 22, 23, 8, 9, 14, 15]
+				}
+			]
+		},
+		{
+			"name": "Eyebrow Lower (Left)",
+			"image": "lbrow-down.png",
+			"vibrations": [
+				{
+					"beat": 0,
+					"motors": [5, 6, 7]
+				},
+				{
+					"beat": 1,
+					"motors": [13, 14, 15]
+				},
+				{
+					"beat": 2,
+					"motors": [21, 22, 23]
+				}
+			]
+		},
+		{
+			"name": "Eyebrow Raise (Left)",
+			"image": "lbrow-up.png",
+			"vibrations": [
+				{
+					"beat": 2,
+					"motors": [5, 6, 7]
+				},
+				{
+					"beat": 1,
+					"motors": [13, 14, 15]
+				},
+				{
+					"beat": 0,
+					"motors": [21, 22, 23]
+				}
+			]
+		},
+		{
+			"name": "Eyebrow Lower (Right)",
+			"image": "rbrow-down.png",
+			"vibrations": [
+				{
+					"beat": 0,
+					"motors": [0, 1, 2]
+				},
+				{
+					"beat": 1,
+					"motors": [8, 9, 10]
+				},
+				{
+					"beat": 2,
+					"motors": [16, 17, 18]
+				}
+			]
+		},
+		{
+			"name": "Eyebrow Raise (Right)",
+			"image": "rbrow-up.png",
+			"vibrations": [
+				{
+					"beat": 2,
+					"motors": [0, 1, 2]
+				},
+				{
+					"beat": 1,
+					"motors": [8, 9, 10]
+				},
+				{
+					"beat": 0,
+					"motors": [16, 17, 18]
+				}
+			]
+		},
+		{
+			"name": "Eyebrow Lower (Full)",
+			"image": "brow-down.png",
+			"vibrations": [
+				{
+					"beat": 0,
+					"motors": [0, 1, 2, 5, 6, 7]
+				},
+				{
+					"beat": 1,
+					"motors": [8, 9, 10, 13, 14, 15]
+				},
+				{
+					"beat": 2,
+					"motors": [16, 17, 18, 21, 14, 15]
+				}
+			]
+		},
+		{
+			"name": "Eyebrow Raise (Full)",
+			"image": "brow-up.png",
+			"vibrations": [
+				{
+					"beat": 2,
+					"motors": [0, 1, 2, 5, 6, 7]
+				},
+				{
+					"beat": 1,
+					"motors": [8, 9, 10, 13, 14, 15]
+				},
+				{
+					"beat": 0,
+					"motors": [16, 17, 18, 21, 14, 15]
+				}
+			]
+		},
+		{
+			"name": "Eyebrow Scrunch",
+			"image": "brow-scrunch.png",
+			"vibrations": [
+				{
+					"beat": 0,
+					"motors": [0, 1, 6, 7]
+				},
+				{
+					"beat": 1,
+					"motors": [1, 2, 5, 6]
+				},
+				{
+					"beat": 2,
+					"motors": [2, 3, 4, 5, 11, 12]
+				}
+			]
+		}
+	]
+}
