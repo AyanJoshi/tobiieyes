@@ -40,7 +40,7 @@ SF = 10
 
 # GLASSES_IP = "fd93:27e0:59ca:16:76fe:48ff:fe05:1d43" # IPv6 address scope global
 #GLASSES_IP = "10.46.16.86"  # IPv4 address
-GLASSES_IP = "10.218.109.16"  # IPv4 address
+GLASSES_IP = "10.218.110.92"  # IPv4 address
 PORT = 49152
 
 
@@ -188,7 +188,7 @@ if __name__ == "__main__":
 			pygame.draw.circle(screen, green, (int(SCREEN_RES_X*avg(x_smooth)), int(SCREEN_RES_Y*avg(y_smooth))), 10, 3)
 			pygame.display.update()
 			motor = (HAPT_RES_X-int(avg(x_smooth)*HAPT_RES_X)) + int(avg(y_smooth)*HAPT_RES_Y)*HAPT_RES_X - 1
-			two_d_display.vibrate(motor,4,0,1)
+			two_d_display.vibrate(motor,4,0,3)
 			print(g_coords[0] + ', ' + g_coords[1] + '\tMotor: ' + str(motor))
 		
 
