@@ -30,8 +30,9 @@ SCREEN_RES_Y = 1000
 SF = 10
 
 # GLASSES_IP = "fd93:27e0:59ca:16:76fe:48ff:fe05:1d43" # IPv6 address scope global
-#GLASSES_IP = "10.46.16.86"  # IPv4 address
-GLASSES_IP = "10.218.109.16"  # IPv4 address
+#GLASSES_IP = "10.218.109.16"  # IPv4 address
+#GLASSES_IP = "10.218.108.47"
+GLASSES_IP = "10.218.106.130"
 PORT = 49152
 
 
@@ -127,7 +128,7 @@ if __name__ == "__main__":
         data, address = data_socket.recvfrom(1024)
 
 	#print(data.split())
-        #print (data)
+        print (data)
         #print (data.split(','))
 
 	d_spl = data.split(',', 2)

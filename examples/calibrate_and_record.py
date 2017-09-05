@@ -12,7 +12,8 @@ import time
 import threading
 import socket
 
-GLASSES_IP = "10.218.109.16"  # IPv4 address
+#GLASSES_IP = "10.218.110.92"  # IPv4 address
+GLASSES_IP = "10.218.108.47"
 PORT = 49152
 base_url = 'http://' + GLASSES_IP
 timeout = 1
