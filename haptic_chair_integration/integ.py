@@ -40,7 +40,7 @@ SF = 10
 
 # GLASSES_IP = "fd93:27e0:59ca:16:76fe:48ff:fe05:1d43" # IPv6 address scope global
 #GLASSES_IP = "10.46.16.86"  # IPv4 address
-GLASSES_IP = "10.218.110.92"  # IPv4 address
+GLASSES_IP = "10.218.105.60"  # IPv4 address
 PORT = 49152
 
 
@@ -89,6 +89,12 @@ def avg(coord_list):
 		summer = summer + c
 	return summer/len(coord_list)
 
+
+##################################################
+##################################################
+# HERE IS RELEVANT TO YOU GUYS 
+##################################################
+##################################################
 from pyhaptic import HapticInterface
 
 def find_comm_port():
@@ -114,6 +120,12 @@ def find_comm_port():
         print i
     comm_choice = raw_input("\nPlease choose the full path to the comm port that the haptic controller is connected to:")
     return comm_choice
+
+##################################################
+##################################################
+# HERE IS RELEVANT TO YOU GUYS \END
+##################################################
+##################################################
 
 if __name__ == "__main__":
     
